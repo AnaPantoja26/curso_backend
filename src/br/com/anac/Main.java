@@ -39,6 +39,14 @@ public class Main {
 				.filter(p -> p.getSexo().equals("feminino") || p.getSexo().equals("mulher"))
 				.collect(Collectors.toList());
 		
+		boolean allWomen = mulheres.stream()
+				.allMatch(p -> p.getSexo().equals("feminino") || p.getSexo().equals("mulher"));
+		if (allWomen) {
+			System.out.println("A lista contém apenas mulheres.");
+		} else {
+			System.out.println("A lista contém pessoas de outro sexo.");
+		}
+		
 		System.out.println("Lista de Mulheres");
 		if (!mulheres.isEmpty()) {
 			mulheres.forEach(p -> System.out.println(p.getNome()));
